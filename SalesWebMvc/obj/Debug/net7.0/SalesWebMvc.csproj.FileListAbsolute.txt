@@ -518,3 +518,5 @@ D:\Dev\Projetos Pessoais\Vendas.Web.Mvc\SalesWebMvc\obj\Debug\net7.0\refint\Sale
 D:\Dev\Projetos Pessoais\Vendas.Web.Mvc\SalesWebMvc\obj\Debug\net7.0\SalesWebMvc.pdb
 D:\Dev\Projetos Pessoais\Vendas.Web.Mvc\SalesWebMvc\obj\Debug\net7.0\SalesWebMvc.genruntimeconfig.cache
 D:\Dev\Projetos Pessoais\Vendas.Web.Mvc\SalesWebMvc\obj\Debug\net7.0\ref\SalesWebMvc.dll
+D:\Dev\Projetos Pessoais\Vendas.Web.Mvc\SalesWebMvc\bin\Debug\net7.0\Npgsql.dll
+D:\Dev\Projetos Pessoais\Vendas.Web.Mvc\SalesWebMvc\bin\Debug\net7.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll

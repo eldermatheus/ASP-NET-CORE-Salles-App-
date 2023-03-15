@@ -1,8 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<SalesWebMvcContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("SalesWebMvcContext") ?? throw new InvalidOperationException("Connection string 'SalesWebMvcContext' not found.")));
+    options.UseNpgsql(
+        builder.Configuration.GetConnectionString("SalesWebMvcContext")
+        ?? throw new InvalidOperationException("Connection string 'SalesWebMvcContext' not found."),
+        options => options.SetPostgresVersion(new Version("9.5"))
+        )
+    ); 
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
