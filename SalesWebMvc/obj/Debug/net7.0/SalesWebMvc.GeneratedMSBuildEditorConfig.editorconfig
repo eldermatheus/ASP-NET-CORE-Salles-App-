@@ -16,24 +16,24 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Dev\Projetos Pessoais\Vendas.Web.Mvc\SalesWebMvc
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Dev/Projetos Pessoais/Vendas.Web.Mvc/SalesWebMvc/Views/Departments/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcQ3JlYXRlLmNzaHRtbA==
+[D:/Dev/Projetos Pessoais/Vendas.Web.Mvc/SalesWebMvc/Views/Departamentos/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0YW1lbnRvc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/Projetos Pessoais/Vendas.Web.Mvc/SalesWebMvc/Views/Departments/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcRGVsZXRlLmNzaHRtbA==
+[D:/Dev/Projetos Pessoais/Vendas.Web.Mvc/SalesWebMvc/Views/Departamentos/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0YW1lbnRvc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/Projetos Pessoais/Vendas.Web.Mvc/SalesWebMvc/Views/Departments/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcRGV0YWlscy5jc2h0bWw=
+[D:/Dev/Projetos Pessoais/Vendas.Web.Mvc/SalesWebMvc/Views/Departamentos/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0YW1lbnRvc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/Projetos Pessoais/Vendas.Web.Mvc/SalesWebMvc/Views/Departments/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcRWRpdC5jc2h0bWw=
+[D:/Dev/Projetos Pessoais/Vendas.Web.Mvc/SalesWebMvc/Views/Departamentos/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0YW1lbnRvc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/Projetos Pessoais/Vendas.Web.Mvc/SalesWebMvc/Views/Departments/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcSW5kZXguY3NodG1s
+[D:/Dev/Projetos Pessoais/Vendas.Web.Mvc/SalesWebMvc/Views/Departamentos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0YW1lbnRvc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Dev/Projetos Pessoais/Vendas.Web.Mvc/SalesWebMvc/Views/Home/Index.cshtml]

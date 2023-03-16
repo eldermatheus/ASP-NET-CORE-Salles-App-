@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\SalesWebMvc.bundle.scp.css"
     },
     {
+      "Id": "D:\\Dev\\Projetos Pessoais\\Vendas.Web.Mvc\\SalesWebMvc\\wwwroot\\css\\YetiStyle.css",
+      "PackagePath": "staticwebassets\\css\\YetiStyle.css"
+    },
+    {
       "Id": "D:\\Dev\\Projetos Pessoais\\Vendas.Web.Mvc\\SalesWebMvc\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -117,12 +121,20 @@
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
+      "Id": "D:\\Dev\\Projetos Pessoais\\Vendas.Web.Mvc\\SalesWebMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-yeti.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-yeti.css"
+    },
+    {
       "Id": "D:\\Dev\\Projetos Pessoais\\Vendas.Web.Mvc\\SalesWebMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
       "Id": "D:\\Dev\\Projetos Pessoais\\Vendas.Web.Mvc\\SalesWebMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\Dev\\Projetos Pessoais\\Vendas.Web.Mvc\\SalesWebMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min-yeti.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min-yeti.css"
     },
     {
       "Id": "D:\\Dev\\Projetos Pessoais\\Vendas.Web.Mvc\\SalesWebMvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",

@@ -9,32 +9,32 @@ using SalesWebMvc.Models;
 
 namespace SalesWebMvc.Controllers
 {
-    public class DepartmentsController : Controller
+    public class DepartamentosController : Controller
     {
         private readonly SalesWebMvcContext _context;
 
-        public DepartmentsController(SalesWebMvcContext context)
+        public DepartamentosController(SalesWebMvcContext context)
         {
             _context = context;
         }
 
-        // GET: Departments
+        // GET: Departamentos
         public async Task<IActionResult> Index()
         {
-              return _context.Department != null ? 
-                          View(await _context.Department.ToListAsync()) :
+              return _context.Departamento != null ? 
+                          View(await _context.Departamento.ToListAsync()) :
                           Problem("Entity set 'SalesWebMvcContext.Department'  is null.");
         }
 
-        // GET: Departments/Details/5
+        // GET: Departamentos/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Department == null)
+            if (id == null || _context.Departamento == null)
             {
                 return NotFound();
             }
 
-            var department = await _context.Department
+            var department = await _context.Departamento
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (department == null)
             {
@@ -44,52 +44,52 @@ namespace SalesWebMvc.Controllers
             return View(department);
         }
 
-        // GET: Departments/Create
+        // GET: Departamentos/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Departments/Create
+        // POST: Departamentos/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name")] Department department)
+        public async Task<IActionResult> Create([Bind("Id,Name")] Departamento departamento)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(department);
+                _context.Add(departamento);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(department);
+            return View(departamento);
         }
 
-        // GET: Departments/Edit/5
+        // GET: Departamentos/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Department == null)
+            if (id == null || _context.Departamento == null)
             {
                 return NotFound();
             }
 
-            var department = await _context.Department.FindAsync(id);
-            if (department == null)
+            var departamento = await _context.Departamento.FindAsync(id);
+            if (departamento == null)
             {
                 return NotFound();
             }
-            return View(department);
+            return View(departamento);
         }
 
-        // POST: Departments/Edit/5
+        // POST: Departamentos/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] Department department)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] Departamento departamento)
         {
-            if (id != department.Id)
+            if (id != departamento.Id)
             {
                 return NotFound();
             }
@@ -98,12 +98,12 @@ namespace SalesWebMvc.Controllers
             {
                 try
                 {
-                    _context.Update(department);
+                    _context.Update(departamento);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!DepartmentExists(department.Id))
+                    if (!DepartmentExists(departamento.Id))
                     {
                         return NotFound();
                     }
@@ -114,18 +114,18 @@ namespace SalesWebMvc.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(department);
+            return View(departamento);
         }
 
-        // GET: Departments/Delete/5
+        // GET: Departamentos/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Department == null)
+            if (id == null || _context.Departamento == null)
             {
                 return NotFound();
             }
 
-            var department = await _context.Department
+            var department = await _context.Departamento
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (department == null)
             {
@@ -135,19 +135,19 @@ namespace SalesWebMvc.Controllers
             return View(department);
         }
 
-        // POST: Departments/Delete/5
+        // POST: Departamentos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Department == null)
+            if (_context.Departamento == null)
             {
                 return Problem("Entity set 'SalesWebMvcContext.Department'  is null.");
             }
-            var department = await _context.Department.FindAsync(id);
+            var department = await _context.Departamento.FindAsync(id);
             if (department != null)
             {
-                _context.Department.Remove(department);
+                _context.Departamento.Remove(department);
             }
             
             await _context.SaveChangesAsync();
@@ -156,7 +156,7 @@ namespace SalesWebMvc.Controllers
 
         private bool DepartmentExists(int id)
         {
-          return (_context.Department?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Departamento?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

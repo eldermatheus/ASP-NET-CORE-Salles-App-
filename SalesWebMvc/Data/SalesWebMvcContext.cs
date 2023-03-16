@@ -12,5 +12,7 @@ using SalesWebMvc.Models;
         {
         }
 
-        public DbSet<Department> Department { get; set; }
-    }
+        public DbSet<Departamento> Departamento { get; set; }
+        public DbSet<Vendedor> Vendedor { get; set; }
+        public DbSet<Vendas> Vendas { get; set; }
+}
