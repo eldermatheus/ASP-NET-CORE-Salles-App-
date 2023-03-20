@@ -10,14 +10,14 @@ namespace SalesWebMvc.Models
 
         public DateTime Data { get; set; }
         public double Total { get; set; }        
-        public Status Situacao { get; set; }
+        public Situacao Situacao { get; set; }
         public Vendedor Vendedor { get; set; }
 
         public Vendas()
         { 
         }
 
-        public Vendas(int id, DateTime data, double total, Status situacao, Vendedor vendedor)
+        public Vendas(int id, DateTime data, double total, Situacao situacao, Vendedor vendedor)
         {
             Id = id;
             Data = data;

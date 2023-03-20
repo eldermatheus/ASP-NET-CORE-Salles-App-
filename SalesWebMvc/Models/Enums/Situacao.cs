@@ -1,6 +1,6 @@
 ﻿namespace SalesWebMvc.Models.Enums
 {
-    public enum Status
+    public enum Situacao
     {
         Pendente = 0,
         Faturado = 1,

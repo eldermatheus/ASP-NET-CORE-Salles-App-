@@ -5,14 +5,17 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using SalesWebMvc.Models;
 
-    public class SalesWebMvcContext : DbContext
+public class SalesWebMvcContext : DbContext
+{
+    public SalesWebMvcContext(DbContextOptions<SalesWebMvcContext> options)
+        : base(options)
     {
-        public SalesWebMvcContext (DbContextOptions<SalesWebMvcContext> options)
-            : base(options)
-        {
-        }
+    }
 
-        public DbSet<Departamento> Departamento { get; set; }
-        public DbSet<Vendedor> Vendedor { get; set; }
-        public DbSet<Vendas> Vendas { get; set; }
+    public DbSet<Departamento> Departamento { get; set; }
+    public DbSet<Vendedor> Vendedor { get; set; }
+    public DbSet<Vendas> Vendas { get; set; }
+
+    
+
 }
