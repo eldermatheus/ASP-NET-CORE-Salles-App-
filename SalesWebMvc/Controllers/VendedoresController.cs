@@ -1,13 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SalesWebMvc.Models;
 using SalesWebMvc.Services;
 
 namespace SalesWebMvc.Controllers
 {
     public class VendedoresController : Controller
     {
-        private readonly VendedorServico _vendedorServico;
+        private readonly VendedorService _vendedorServico;
 
-        public VendedoresController(VendedorServico vendedorServico)
+        public VendedoresController(VendedorService vendedorServico)
         {
             _vendedorServico = vendedorServico;
         }
@@ -17,6 +18,20 @@ namespace SalesWebMvc.Controllers
             var list = _vendedorServico.FindAll();
 
             return View(list);
+        }
+
+        public IActionResult Criar()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Criar(Vendedor vendedor)
+        {
+            _vendedorServico.Inserir(vendedor);
+            
+            return RedirectToAction(nameof(Index));
         }
     }
 }

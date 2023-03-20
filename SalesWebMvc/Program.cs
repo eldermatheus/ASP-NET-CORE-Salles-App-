@@ -19,7 +19,7 @@ AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<DataSeedService>();
-builder.Services.AddScoped<VendedorServico>();
+builder.Services.AddScoped<VendedorService>();
 
 var app = builder.Build();
 
