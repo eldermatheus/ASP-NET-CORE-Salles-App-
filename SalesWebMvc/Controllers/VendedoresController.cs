@@ -64,5 +64,21 @@ namespace SalesWebMvc.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+        public IActionResult Detalhar(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var vendededor = _vendedorServico.GetById(id.Value);
+
+            if (vendededor == null)
+            {
+                return NotFound();
+            }
+            return View(vendededor);
+        }
     }
 }
