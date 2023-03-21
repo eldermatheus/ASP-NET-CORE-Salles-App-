@@ -1,0 +1,56 @@
+﻿@model SalesWebMvc.Models.Vendedor
+
+@{
+    ViewData["Title"] = "Deletar";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+
+
+
+<div>
+    <h4>
+        <hr />
+        <dl class = "dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nome)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Nome)
+            </dd>
+
+            <dl class = "dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+            <dl class = "dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.DataNascimento)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DataNascimento)
+            </dd>
+
+            <dl class = "dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.SalarioBase)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SalarioBase)
+            </dd>
+        </dl>
+
+        <form asp-action="Deletar">
+            <input type="hidden" asp-for="Id"/>
+            <input type="submit" value="Delete" class="btn btn-danger"/>
+            <a asp-action="Index">Voltar para lista</a>
+        </form>
+        
+    </h4>
+
+</div>

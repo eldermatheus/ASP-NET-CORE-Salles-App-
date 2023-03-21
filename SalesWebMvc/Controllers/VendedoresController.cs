@@ -13,7 +13,7 @@ namespace SalesWebMvc.Controllers
         public VendedoresController(VendedorService vendedorServico, DepartamentoService departamentoService)
         {
             _vendedorServico = vendedorServico;
-            _departamentoService= departamentoService;
+            _departamentoService = departamentoService;
         }
 
         public IActionResult Index()
@@ -36,7 +36,32 @@ namespace SalesWebMvc.Controllers
         public IActionResult Criar(Vendedor vendedor)
         {
             _vendedorServico.Inserir(vendedor);
-            
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Deletar(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var vendededor = _vendedorServico.GetById(id.Value);
+
+            if (vendededor == null)
+            {
+                return NotFound();
+            }
+            return View(vendededor);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Deletar(int id)
+        { 
+            _vendedorServico.Delete(id);
+
             return RedirectToAction(nameof(Index));
         }
     }
