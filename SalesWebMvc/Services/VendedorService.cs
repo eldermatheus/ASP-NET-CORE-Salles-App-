@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using NuGet.Protocol;
 using SalesWebMvc.Models;
+using SalesWebMvc.Services.Exceptions;
 
 namespace SalesWebMvc.Services
 {
@@ -35,5 +37,22 @@ namespace SalesWebMvc.Services
             _context.SaveChanges();
         }
 
+        public void Update(Vendedor vendedor)
+        { 
+            if (!_context.Vendedor.Any(x => x.Id == vendedor.Id)) 
+            {
+                throw new NotFoundException("Id não encontrada");
+            }
+
+            try
+            {
+                _context.Update(vendedor);
+                _context.SaveChanges();
+            }
+            catch (DbConcurrencyException e)
+            {
+                throw new DbConcurrencyException(e.Message);
+            }            
+        }
     }
 }
