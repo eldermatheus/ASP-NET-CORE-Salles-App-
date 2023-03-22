@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.DotNet.Scaffolding.Shared.Messaging;
 using SalesWebMvc.Models;
 using SalesWebMvc.Models.ViewModel;
 using SalesWebMvc.Services;
 using SalesWebMvc.Services.Exceptions;
+using System.Diagnostics;
 
 namespace SalesWebMvc.Controllers
 {
@@ -45,14 +47,14 @@ namespace SalesWebMvc.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Error), new { message = "Id não fornecido"});
             }
 
             var vendededor = _vendedorServico.GetById(id.Value);
 
             if (vendededor == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Error), new { message = "Id não encontrado" });
             }
             return View(vendededor);
         }
@@ -70,14 +72,14 @@ namespace SalesWebMvc.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Error), new { message = "Id não fornecido" });
             }
 
             var vendededor = _vendedorServico.GetById(id.Value);
 
             if (vendededor == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Error), new { message = "Id não encontrado" });
             }
             return View(vendededor);
         }
@@ -86,14 +88,14 @@ namespace SalesWebMvc.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Error), new { message = "Id não fornecido" });
             }
 
             var vendededor = _vendedorServico.GetById(id.Value);
 
             if (vendededor == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Error), new { message = "Id não encontrado" });
             }
 
             List<Departamento> departamentos = _departamentoService.FindAll();
@@ -108,7 +110,7 @@ namespace SalesWebMvc.Controllers
         {
             if (id != vendedor.Id)
             {
-                return BadRequest();
+                return RedirectToAction(nameof(Error), new { message = "Id não corresponde" });
             }
 
             try
@@ -116,14 +118,25 @@ namespace SalesWebMvc.Controllers
                 _vendedorServico.Update(vendedor);
                 return RedirectToAction(nameof(Index));
             }
-            catch (NotFoundException)
+            catch (NotFoundException exception)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Error), new { message = exception.Message });
             }
-            catch(DbConcurrencyException ) 
-            { 
-                return BadRequest();
+            catch (DbConcurrencyException exception)
+            {
+                return RedirectToAction(nameof(Error), new { message = exception.Message });
             }            
+        }
+
+        public IActionResult Error(string message)
+        {
+            var viewModel = new ErrorViewModel
+            {
+                Message = message,
+                RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
+            };
+
+            return View(viewModel);
         }
     }
 }
