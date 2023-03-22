@@ -45,7 +45,6 @@ namespace SalesWebMvc.Controllers
                 return View(viewModel);
             }
             await _vendedorServico.InserirAsync(vendedor);
-
             return RedirectToAction(nameof(Index));
         }
 
@@ -68,10 +67,16 @@ namespace SalesWebMvc.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Deletar(int id)
-        { 
-            await _vendedorServico.DeleteAsync(id);
-
-            return RedirectToAction(nameof(Index));
+        {
+            try
+            {
+                await _vendedorServico.DeleteAsync(id);
+                return RedirectToAction(nameof(Index));
+            }
+            catch (IntegrityException e)
+            {
+                return RedirectToAction(nameof(Error), new { message = "Id não fornecido" });
+            }            
         }
 
         public async Task<IActionResult> Detalhar(int? id)

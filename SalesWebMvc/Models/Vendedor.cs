@@ -26,7 +26,7 @@ namespace SalesWebMvc.Models
         [DisplayFormat(DataFormatString = "{0:F2}")]
         public double SalarioBase { get; set; }
 
-        public Departamento Departamento { get; set;}
+        public Departamento? Departamento { get; set;}
         public int DepartamentoId { get; set; }
         public ICollection<Vendas> Vendas { get; set; } = new List<Vendas>();
 

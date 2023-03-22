@@ -27,11 +27,11 @@ namespace SalesWebMvc.Data
             Departamento departamento4 = new Departamento(4, "Livros");
             Departamento departamento5 = new Departamento(5, "Autopeças");
 
-            Vendedor vendedor1 = new Vendedor() { Id = 1, Nome = "Elder", Email = "email@hotmail.com", DataNascimento = DateTime.Parse("01/05/2000"), SalarioBase = 2500, Departamento = departamento1 };
-            Vendedor vendedor2 = new Vendedor() { Id = 2, Nome = "Maria", Email = "email@hotmail.com", DataNascimento = DateTime.Parse("01/12/2001"), SalarioBase = 1100, Departamento = departamento2 };
-            Vendedor vendedor3 = new Vendedor() { Id = 3, Nome = "Joao", Email = "email@hotmail.com", DataNascimento = DateTime.Parse("21/05/1994"), SalarioBase = 1500, Departamento = departamento3 };
-            Vendedor vendedor4 = new Vendedor() { Id = 4, Nome = "Junior", Email = "email@hotmail.com", DataNascimento = DateTime.Parse("30/09/1989"), SalarioBase = 3500, Departamento = departamento4 };
-            Vendedor vendedor5 = new Vendedor() { Id = 5, Nome = "Lucas", Email = "email@hotmail.com", DataNascimento = DateTime.Parse("17/01/1994"), SalarioBase = 1750, Departamento = departamento5 };
+            Vendedor vendedor1 = new Vendedor() { Id = 1, Nome = "Elder", Email = "elder@hotmail.com", DataNascimento = DateTime.Parse("01/05/2000"), SalarioBase = 2500, Departamento = departamento1 };
+            Vendedor vendedor2 = new Vendedor() { Id = 2, Nome = "Maria", Email = "maria@hotmail.com", DataNascimento = DateTime.Parse("01/12/2001"), SalarioBase = 1100, Departamento = departamento2 };
+            Vendedor vendedor3 = new Vendedor() { Id = 3, Nome = "Joao", Email = "joao@hotmail.com", DataNascimento = DateTime.Parse("21/05/1994"), SalarioBase = 1500, Departamento = departamento3 };
+            Vendedor vendedor4 = new Vendedor() { Id = 4, Nome = "Junior", Email = "junior@hotmail.com", DataNascimento = DateTime.Parse("30/09/1989"), SalarioBase = 3500, Departamento = departamento4 };
+            Vendedor vendedor5 = new Vendedor() { Id = 5, Nome = "Lucas", Email = "lucas@hotmail.com", DataNascimento = DateTime.Parse("17/01/1994"), SalarioBase = 1750, Departamento = departamento5 };
 
             Vendas venda1 = new Vendas() { Id = 1, Data = DateTime.Parse("17/1/2023").ToLocalTime(), Total = 70, Situacao = Situacao.Faturado, Vendedor = vendedor1 };
             Vendas venda2 = new Vendas() { Id = 2, Data = DateTime.Parse("6/1/2023").ToLocalTime(), Total = 120, Situacao = Situacao.Pendente, Vendedor = vendedor2 };

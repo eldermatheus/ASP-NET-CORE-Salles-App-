@@ -32,9 +32,16 @@ namespace SalesWebMvc.Services
 
         public async Task DeleteAsync(int id)
         {
-            var vendedor = await _context.Vendedor.FindAsync(id);
-            _context.Vendedor.Remove(vendedor);
-            await _context.SaveChangesAsync();
+            try
+            {
+                var vendedor = await _context.Vendedor.FindAsync(id);
+                _context.Vendedor.Remove(vendedor);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException e)
+            {
+                throw new IntegrityException(e.Message);
+            }
         }
 
         public async Task UpdateAsync(Vendedor vendedor)
