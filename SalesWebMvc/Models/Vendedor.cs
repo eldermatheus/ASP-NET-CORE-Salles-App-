@@ -6,16 +6,22 @@ namespace SalesWebMvc.Models
     {
         [Key]
         public int Id { get; set; }
+
+        [Required(ErrorMessage = "{0} obrigatório")]
+        [StringLength(250, MinimumLength = 10, ErrorMessage = "{0} deveria estar entre {2} e {1}")]
         public string Nome { get; set; }
 
+        [Required(ErrorMessage = "{0} obrigatório")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
+        [Required(ErrorMessage = "{0} obrigatório")]
         [Display(Name = "Data Nascimento")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DataNascimento { get; set; }
 
+        [Required(ErrorMessage = "{0} obrigatório")]
         [Display(Name = "Salario Base")]
         [DisplayFormat(DataFormatString = "{0:F2}")]
         public double SalarioBase { get; set; }
