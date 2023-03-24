@@ -7,11 +7,11 @@ namespace SalesWebMvc.Services
     {
         private readonly SalesWebMvcContext _context;
         public VendasService(SalesWebMvcContext context)
-        { 
+        {
             _context = context;
         }
 
-        public async Task<List<Vendas>> GetVendasAsync(DateTime? minDate, DateTime? maxDate)
+        public async Task<List<Vendas>> GetVendasPorDataAsync(DateTime? minDate, DateTime? maxDate)
         {
             var result = await _context.Vendas
                 .Where(venda => venda.Data >= minDate && venda.Data <= maxDate)
@@ -38,6 +38,19 @@ namespace SalesWebMvc.Services
                 .Include(x => x.Vendedor.Departamento)
                 .OrderByDescending(x => x.Data)
                 .ToListAsync();*/
+        }
+
+        public async Task<List<IGrouping<Departamento,Vendas>>> GetVendasAgrupadasPorDataAsync(DateTime? minDate, DateTime? maxDate)
+        {
+            var result = await _context.Vendas
+                .Where(venda => venda.Data >= minDate && venda.Data <= maxDate)
+                .Include(x => x.Vendedor)
+                .Include(x => x.Vendedor.Departamento)
+                .OrderByDescending(x => x.Data)
+                .GroupBy(x => x.Vendedor.Departamento)
+                .ToListAsync();
+
+            return result;
         }
     }
 }

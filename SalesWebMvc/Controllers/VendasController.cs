@@ -20,7 +20,7 @@ namespace SalesWebMvc.Controllers
         public async Task<IActionResult> BuscaSimples(DateTime? minDate, DateTime? maxDate)
         {
             if (!minDate.HasValue && !maxDate.HasValue)
-            { 
+            {
                 minDate = DateTime.Now;
                 maxDate = DateTime.Now;
             }
@@ -28,14 +28,25 @@ namespace SalesWebMvc.Controllers
             ViewData["minDate"] = minDate.Value.ToString("yyyy-MM-dd");
             ViewData["maxDate"] = maxDate.Value.ToString("yyyy-MM-dd");
 
-            var result = await _vendasService.GetVendasAsync(minDate, maxDate);
+            var result = await _vendasService.GetVendasPorDataAsync(minDate, maxDate);
 
             return View(result);
         }
 
-        public IActionResult BuscaAgrupada()
+        public async Task<IActionResult> BuscaAgrupada(DateTime? minDate, DateTime? maxDate)
         {
-            return View();
+            if (!minDate.HasValue && !maxDate.HasValue)
+            {
+                minDate = DateTime.Now;
+                maxDate = DateTime.Now;
+            }
+
+            ViewData["minDate"] = minDate.Value.ToString("yyyy-MM-dd");
+            ViewData["maxDate"] = maxDate.Value.ToString("yyyy-MM-dd");
+
+            var result = await _vendasService.GetVendasAgrupadasPorDataAsync(minDate, maxDate);
+
+            return View(result);
         }
     }
 }
