@@ -24,6 +24,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<DataSeedService>();
 builder.Services.AddScoped<VendedorService>();
 builder.Services.AddScoped<DepartamentoService>();
+builder.Services.AddScoped<VendasService>();
 
 var app = builder.Build();
 
